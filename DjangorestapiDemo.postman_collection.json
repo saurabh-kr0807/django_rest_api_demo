@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "372e45e3-8e71-48df-bf5a-958a9093280d",
+		"name": "DjangorestapiDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "users_singup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"Test10@gmail.com\",\n    \"password\": \"12345\",\n    \"username\": \"test10\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/users/signup/"
+			},
+			"response": []
+		},
+		{
+			"name": "users_login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"Test4@gmail.com\",\n    \"password\": \"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/users/login/"
+			},
+			"response": []
+		},
+		{
+			"name": "users_search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token f7354f847ec167f11df2049023538c10d8455091",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/users/search/?search_key=Test2@gmail.com",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"users",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "search_key",
+							"value": "Test2@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "send-request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 20a63d76ad2d9aad7d0be10a8590ca46dceb4f4e",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"receiver\": \"2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/friends/send-request/"
+			},
+			"response": []
+		},
+		{
+			"name": "accept-request",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 2279635f9e5b8eaabf592a1d9f49e4a4d26f38ba",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/friends/accept-request/8/"
+			},
+			"response": []
+		},
+		{
+			"name": "reject-request",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token a069d8c9e56b760b634823bfee1224a2e5c34772",
+						"type": "default"
+					}
+				],
+				"url": "http://127.0.0.1:8000/friends/reject-request/5/"
+			},
+			"response": []
+		},
+		{
+			"name": "list-friends",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 20a63d76ad2d9aad7d0be10a8590ca46dceb4f4e",
+						"type": "default"
+					}
+				],
+				"url": "http://127.0.0.1:8000/friends/list-friends"
+			},
+			"response": []
+		},
+		{
+			"name": "list-pending-friend-requests",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 20a63d76ad2d9aad7d0be10a8590ca46dceb4f4e",
+						"type": "default"
+					}
+				],
+				"url": "http://127.0.0.1:8000/friends/list-pending-friend-requests"
+			},
+			"response": []
+		}
+	]
+}
